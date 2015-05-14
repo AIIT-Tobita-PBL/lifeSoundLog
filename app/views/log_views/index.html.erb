@@ -1,0 +1,30 @@
+<h1>Listing Log Views</h1>
+
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Msg</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @log_views.each do |log_view| %>
+      <tr>
+        <td><%= log_view.user.email %></td>
+        <td><%= log_view.msg %></td>
+        <!--
+        <td><%= link_to 'Show', log_view %></td>
+        <td><%= link_to 'Edit', edit_log_view_path(log_view) %></td>
+        -->
+        <td><%= link_to 'Destroy', log_view, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Log view', new_log_view_path %>

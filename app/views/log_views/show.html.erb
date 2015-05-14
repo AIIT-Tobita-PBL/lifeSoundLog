@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @log_view.user %>
+</p>
+
+<p>
+  <strong>Msg:</strong>
+  <%= @log_view.msg %>
+</p>
+
+<%= link_to 'Edit', edit_log_view_path(@log_view) %> |
+<%= link_to 'Back', log_views_path %>

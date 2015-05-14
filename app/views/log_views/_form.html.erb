@@ -1,0 +1,25 @@
+<%= form_for(@log_view) do |f| %>
+  <% if @log_view.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@log_view.errors.count, "error") %> prohibited this log_view from being saved:</h2>
+
+      <ul>
+      <% @log_view.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :msg %><br>
+    <%= f.text_field :msg %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
