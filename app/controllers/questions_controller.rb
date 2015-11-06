@@ -62,12 +62,9 @@ class QuestionsController < ApplicationController
   end
 
   def apply
-    message = Question.find(params[:id]).message
-    fifoFile = "/tmp/question.fifo"
-    writer = open(fifoFile, "w+")
-    writer.puts message
-    writer.flush
-
+    message = Question.find(params[:id])
+    message.apply
+    
     redirect_to questions_url, notice: "Question is applyed to the device. text: #{message}"
   end
 
