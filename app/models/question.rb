@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
   def apply
     hoyaAPI = ENV["HOYA_API"]
     hoyaURL = "https://api.voicetext.jp/v1/tts"
-    wavFile = "/tmp/voice.wav"
+    wavFile = "/tmp/question.wav"
     text = self.message
     puts hoyaAPI
     puts text
@@ -13,9 +13,6 @@ class Question < ActiveRecord::Base
     emotionLevel = 3
     pitch = 80
     speed = 120
-    #curl "https://api.voicetext.jp/v1/tts" -o "wavファイル名"
-    # -u "apiキー:" -d "text=変換したいテキスト"
-    # -d "speaker=hikari" -d "emotion=happiness" -d "emotion_level=3" -d "pitch=80" -d "speed=120"
 
     c = Curl::Easy.new("https://api.voicetext.jp/v1/tts")
     c.http_auth_types = :basic
