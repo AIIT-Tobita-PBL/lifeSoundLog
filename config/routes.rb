@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :questions
   resources :log_views
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root to: 'log_views#index'
 
+  get 'questions/apply/:id' => 'questions#apply', as: :apply
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
