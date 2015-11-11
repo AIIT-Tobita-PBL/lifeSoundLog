@@ -8,9 +8,11 @@ class Question < ActiveRecord::Base
     text = self.message
     puts hoyaAPI
     puts text
-    speaker = "hikari"
-    emotion = "happiness"
-    emotionLevel = 3
+    #speaker = "hikari"
+    speaker = "bear"
+    #emotion = "happiness"
+    emotion = "anger"
+    emotionLevel = 4
     pitch = 80
     speed = 120
 

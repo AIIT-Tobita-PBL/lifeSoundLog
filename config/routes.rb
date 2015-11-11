@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :uploaders, :only => [:index, :create, :destroy]
   resources :questions
   resources :log_views
   devise_for :users
