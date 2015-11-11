@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @uploader.filename %>
+</p>
+
+<p>
+  <strong>Filepath:</strong>
+  <%= @uploader.filepath %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @uploader.user %>
+</p>
+
+<%= link_to 'Edit', edit_uploader_path(@uploader) %> |
+<%= link_to 'Back', uploaders_path %>

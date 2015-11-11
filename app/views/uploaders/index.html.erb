@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Uploaders</h1>
+
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Logged at</th>
+      <th>Wav file</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uploaders.each do |uploader| %>
+      <% wavFile = "#{uploader.filepath}/#{uploader.filename}" %>
+      <tr>
+        <td><%= uploader.user.email %></td>
+        <td><%= uploader.updated_at %></td>
+        <td><audio src="<%= wavFile %>" controls></audio></td>
+        <td><%= link_to 'Destroy', uploader, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
