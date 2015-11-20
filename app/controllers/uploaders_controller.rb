@@ -28,8 +28,10 @@ class UploadersController < ApplicationController
     user = User.find(userID)
     file = params[:wavFile]
     filepath = "uploads/#{userID}"
-    actualpath = "public/#{filepath}"
-    puts filepath
+    #actualpath = "public/#{filepath}"
+    actualpath = Rails.root.to_s + "/public/" + filepath
+    #actualpath = "/home/tobby/tealion/lib/lifeSoundLog/public/" + filepath
+    puts actualpath
     unless Dir.exist?(actualpath)
       Dir.mkdir(actualpath)
     end
