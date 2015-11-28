@@ -55,3 +55,4 @@ group :development, :test do
 end
 
 gem 'curb'
+gem 'pry-byebug'
