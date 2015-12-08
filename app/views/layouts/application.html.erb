@@ -13,6 +13,11 @@
         Logged in as <strong><%= current_user.email %></strong>.
         <%= link_to 'プロフィール変更', edit_user_registration_path %> |
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <hr>
+        <%= link_to "logvew", log_views_path  %> |
+        <%= link_to "questions", questions_path  %> |
+        <%= link_to "uploaders", uploaders_url  %>
+        <hr>
       <% else %>
         <%= link_to "サインイン", new_user_registration_path %> |
         <%= link_to "ログイン", new_user_session_path %>
