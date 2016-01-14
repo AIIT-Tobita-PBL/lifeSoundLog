@@ -63,8 +63,8 @@ class QuestionsController < ApplicationController
 
   def apply
     message = Question.find(params[:id])
-    message.apply
-    
+    #message.apply
+
     redirect_to questions_url, notice: "Question is applyed to the device. text: #{message}"
   end
 
